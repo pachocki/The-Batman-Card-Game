@@ -47,7 +47,7 @@ function endGame(){
 <div class="col3">
     <h1>Win !</h1>
     <a href="game.html" class="button" id="button-3">
-    <div id="slide"><img src="/images/bat-silhouette.png" alt="logo" class="logo-btn"></div>
+    <div id="slide"><img src="./images/bat-silhouette.png" alt="logo" class="logo-btn"></div>
     <p class="start-game">Back !</p>
 </a>
 </div>
