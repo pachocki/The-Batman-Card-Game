@@ -7,7 +7,7 @@ const characterData={
     name:"Batman",
     style:"batman-style",
     health:" 100",
-    diceCount:3
+    diceCount:2
 },
     monster :{
     elementId:"monster",
