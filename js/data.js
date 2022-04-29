@@ -3,7 +3,7 @@
 const characterData={
     hero :{
     elementId:"hero",
-    model:"./images/Batman.png",
+    model:"./images/batman-hero.png",
     name:"Batman",
     style:"batman-style",
     health:" 100",
