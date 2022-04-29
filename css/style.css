@@ -1,0 +1,314 @@
+body{
+    background: black;
+    position:relative;
+    font-family: 'Bangers', cursive;
+    margin:0;
+    padding:0;
+}
+a{
+    text-decoration: none;
+}
+.container{
+    position:relative;
+    height:100vh;
+}
+video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.logo-btn{
+    position:absolute;
+    z-index:2;
+    width: 90px;
+    height: 90px;
+    left: 22%;
+    bottom: -25px;
+
+}
+
+/* Button Styles */
+
+.button {
+  display: inline-flex;
+  height: 40px;
+  width: 150px;
+  border: 2px solid #000;
+  border-radius:10px;
+  margin: 20px 20px 20px 20px;
+  background:#000;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: .8em;
+  letter-spacing: 1.5px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  font-family:"Bangers";
+}
+#button-2 {
+    position: absolute;
+    overflow: hidden;
+    cursor: pointer;
+    bottom:20%;
+    left:44%;
+    color:yellow;
+  }
+  
+  #button-2 a {
+    position: relative;
+    transition: all .35s ease-Out;
+    color:yellow;
+  }
+  
+  #slide {
+    width: 100%;
+    height: 100%;
+    left: -200px;
+    background:yellow;
+    position: absolute;
+    transition: all .35s ease-Out;
+    bottom: 0;
+    z-index: 5;
+  }
+  
+  #button-2:hover #slide {
+    left: 0;
+  }
+  
+  #button-2:hover a {
+    color:yellow;
+  }
+.start-game{
+  color:yellow;
+  font-size:1.5rem;
+}
+
+
+
+/*Game*/
+.game-container{
+  display:grid;
+  grid-template-columns: 40% 20% 40%;
+  position:relative;
+  text-align:center;
+  margin:0 2em;
+}
+
+.versus{
+  position:relative;
+  width:100%;
+  top:150px;
+}
+.model{
+  width:200px;
+  height:300px;
+  transform: translateZ(50px);
+}
+.card{
+  background-image: linear-gradient(
+    #0000004c, #2a2b2f9e 10%, #000000ec);
+  border-radius: 10px;
+  margin: 2em 2em 0 2em;
+  transform-style:preserve-3d;
+}
+.top-card{
+  transform-style:preserve-3d;
+}
+.bottom-card{
+  background:#000;
+  transform-style:preserve-3d;
+  padding:1em 0;
+  border-radius:10px;
+  
+}
+
+.dice{
+  font-size:2.5rem;
+}
+.transform{
+  transform: translateZ(50px);
+  margin:10px;
+}
+.dice-container {
+  position:relative;
+  bottom:0;
+  left:0px;
+  right:0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .5rem;
+}
+.dice, .placeholder-dice{
+  height:5.5vh;
+  width:5.5vh;
+  padding:5px;
+  border-radius: 5px;
+  border:1px solid #666;
+  text-align: center;
+  line-height: 6vh;
+}
+
+
+.atack-btn {
+  align-items: center;
+  appearance: none;
+  background-image: radial-gradient(100% 100% at 100% 0, #ff0000 0, #ff0000 100%);
+  border: 0;
+  border-radius: 6px;
+  box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 20px;
+  padding-right: 20px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 2rem;
+  top:35%;
+}
+
+.atack-btn:focus {
+  box-shadow: #ff0000 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #aa2121 0 -3px 0 inset;
+}
+
+.atack-btn:hover {
+  box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #ff0000 0 -3px 0 inset;
+  transform: translateY(-2px);
+  box-shadow: rgba(205, 63, 63, 1) 0 1px 30px;
+}
+
+.atack-btn:active {
+  box-shadow: #ff0000 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
+
+
+.batman-style{
+  color:yellow;
+  background:black;
+}
+.joker-style{
+  color:green;
+  
+}
+
+
+/*End game*/
+.end-game{
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 100vh;
+    width: 100%;
+    align-items:center;
+}
+.end-game h1{
+    position: relative;
+    z-index: 2;
+    color: yellow;
+    font-size: 8em;
+}
+.col1 h1{
+  text-align:right;
+}
+
+.winner{
+  position:relative;
+  z-index:2;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 95vh;
+}
+
+/* Button Styles */
+
+
+#button-1 {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    bottom:-40%;
+    
+    color:yellow;
+  }
+  
+  #button-1 a {
+    position: relative;
+    transition: all .35s ease-Out;
+    color:yellow;
+  }
+  
+  #slide {
+    width: 100%;
+    height: 100%;
+    left: -200px;
+    background:yellow;
+    position: absolute;
+    transition: all .35s ease-Out;
+    bottom: 0;
+    z-index: 5;
+  }
+  
+  #button-1:hover #slide {
+    left: 0;
+  }
+  
+  #button-1:hover a {
+    color:yellow;
+  }
+
+
+#button-3 {
+  position: absolute;
+  overflow: hidden;
+  cursor: pointer;
+  bottom:0;
+  z-index:2;
+  color:yellow;
+}
+
+#button-3 a {
+  position: relative;
+  transition: all .35s ease-Out;
+  color:yellow;
+}
+
+#slide {
+  width: 100%;
+  height: 100%;
+  left: -200px;
+  background:yellow;
+  position: absolute;
+  transition: all .35s ease-Out;
+  bottom: 0;
+  z-index: 5;
+}
+
+#button-3:hover #slide {
+  left: 0;
+}
+
+#button-3:hover a {
+  color:yellow;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!--Style Css-->
+    <link rel="stylesheet" href="./css/style.css">
+    <!--Font-->
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <audio autoplay loop>
+        <source src="music/Batman-game-music.mp3"  type="audio/mpeg">
+    </audio>
+
+    <video src="./video/Game-background.mp4" autoplay muted loop type="mp4"></video>
+        <div class="game-container">
+            <div class="card js-tilt" id="hero">
+                <div class="top-card batman">
+                    <img class="model"  src="images/batman.png" alt="" srcset="">
+                </div>
+        </div>
+        <div id="vs">
+            <img src="./images/Versus.png" alt="vs" class="versus">
+            <button id="atack" class="atack-btn">Attack!</button>
+            <a href="index.html" class="button" id="button-1">
+                <div id="slide"><img src="/images/bat-silhouette.png" alt="logo" class="logo-btn"></div>
+                <p class="start-game">Back !</p>
+            </a>
+
+        </div>
+        <div class="card js-tilt" id="monster">
+        </div>
+    </div>
+</body>
+   
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.0.3/tilt.jquery.min.js" integrity="sha512-14AZ/DxUrlF26z6v7egDkpJHKyJRn/7ue2BgpWZ/fmqrqVzf4PrQnToy99sHmKwzKev/VZ1tjPxusuTV/n8CcQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./js/index.js" type="module"></script>
+</body>
+</html>
