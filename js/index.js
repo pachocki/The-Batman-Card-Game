@@ -15,6 +15,8 @@ function playAudio(url) {
     new Audio(url).play();
   }
 
+  playAudio("./music/batman-theme.mp3")
+
 let monstersArray = ["scarecrow","pingwin","joker"]
 
 function getNewMonster(){
@@ -79,7 +81,6 @@ function endGame(){
 function render(){
     document.getElementById(batman.elementId).innerHTML=batman.getCharacterHtml()
     document.getElementById(monster.elementId).innerHTML=monster.getCharacterHtml()
-    playAudio("./music/batman-theme.mp3")
     
 }
 
