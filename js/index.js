@@ -86,7 +86,7 @@ function render(){
 document.getElementById("atack").addEventListener("click" , attack)
 const batmanSound = new Audio('./music/batman.mp3');
 const jokerSound = new Audio('./music/joker.mp3');
-const bodyMusic = new Audio('./music/batman-game-music.mp3')
+
 document.querySelector("#hero"). addEventListener ("mouseover", function() {
     batmanSound.play();
 });
@@ -94,10 +94,7 @@ document.querySelector("#monster"). addEventListener ("mouseover", function() {
     jokerSound.play();
     
 });
-document.querySelector("body").addEventListener ("mouseover", function() {
-    bodyMusic.play();
-    
-});
+
 const batman = new Character(characterData.hero)
 let monster = getNewMonster()
 render()
