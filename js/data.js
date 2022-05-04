@@ -7,15 +7,31 @@ const characterData={
     name:"Batman",
     style:"batman-style",
     health:" 100",
-    diceCount:2
+    diceCount:3
 },
-    monster :{
+    scarecrow :{
     elementId:"monster",
-    model:"./images/joker.png",
-    name:" Joker",
-    style:"joker-style",
-    health:" 100",
+    model:"./images/scarecrow.png",
+    name:"Scarecrow",
+    style:"scarecrow-style",
+    health:" 35",
+    diceCount:1
+},
+    pingwin :{
+    elementId:"monster",
+    model:"./images/pingwin.png",
+    name:"Pingwin",
+    style:"pingwin-style",
+    health:" 40",
     diceCount:2
+},  
+joker :{
+elementId:"monster",
+model:"./images/joker.png",
+name:" Joker",
+style:"joker-style",
+health:"45",
+diceCount:3
 }
 }
 

@@ -15,26 +15,43 @@ function playAudio(url) {
     new Audio(url).play();
   }
 
+let monstersArray = ["scarecrow","pingwin","joker"]
+
+function getNewMonster(){
+    const nextMonster = characterData[monstersArray.shift()]
+    return nextMonster ? new Character(nextMonster) : {}
+}
 
 function attack(){
     batman.getDiceHtml()
-    joker.getDiceHtml()
-    batman.takeDamage(joker.currentDiceScore)
-    joker.takeDamage(batman.currentDiceScore)
+    monster.getDiceHtml()
+    batman.takeDamage(monster.currentDiceScore)
+    monster.takeDamage(batman.currentDiceScore)
     render()
     playAudio("music/punch.mp3")
-    if(batman.dead || joker.dead ){
+    if(batman.dead){
         endGame()
     }
+    else if(monster.dead){
+        if(monstersArray.length > 0){
+            monster = getNewMonster()
+            render()
+        }
+        else{
+            endGame()
+        }
+    }
+
 }
 function endGame(){
     const batmanWin =batman.health>0
-    const renderModel = batman.health===0 && joker.health===0 ? "No victourious all are dead":
+    const renderModel = batman.health===0 && monster.health===0 ? "./images/batman-joker.jpg":
     batmanWin ? batman.model:
-    joker.model 
+    monster.model 
     const renderText = batman.health>0 ? "Batman":
-    "Joker"
-
+    monster.health>0 ? "Joker":
+    "No one"
+    playAudio("./music/batman-theme.mp3")
     document.body.innerHTML=
 
     `<div class="end-game">
@@ -61,14 +78,11 @@ function endGame(){
 
 function render(){
     document.getElementById(batman.elementId).innerHTML=batman.getCharacterHtml()
-    document.getElementById(joker.elementId).innerHTML=joker.getCharacterHtml()
+    document.getElementById(monster.elementId).innerHTML=monster.getCharacterHtml()
     
-
 }
 
 document.getElementById("atack").addEventListener("click" , attack)
-const batman = new Character(characterData.hero)
-const joker = new Character(characterData.monster)
 const batmanSound = new Audio('./music/batman.mp3');
 const jokerSound = new Audio('./music/joker.mp3');
 document.querySelector("#hero"). addEventListener ("mouseover", function() {
@@ -78,6 +92,8 @@ document.querySelector("#monster"). addEventListener ("mouseover", function() {
     jokerSound.play();
     
 });
+const batman = new Character(characterData.hero)
+let monster = getNewMonster()
 render()
 
 
