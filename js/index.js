@@ -11,11 +11,11 @@ $('.js-tilt').tilt({
 import characterData from "./data.js"
 import Character from "./Character.js"
 
+let isWaiting = false
 function playAudio(url) {
     new Audio(url).play();
   }
 
-  
 
 let monstersArray = ["scarecrow","pingwin","joker"]
 
@@ -25,27 +25,37 @@ function getNewMonster(){
 }
 
 function attack(){
-    batman.getDiceHtml()
-    monster.getDiceHtml()
-    batman.takeDamage(monster.currentDiceScore)
-    monster.takeDamage(batman.currentDiceScore)
-    render()
-    playAudio("music/punch.mp3")
-    if(batman.dead){
-        endGame()
-    }
-    else if(monster.dead){
-        if(monstersArray.length > 0){
-            monster = getNewMonster()
-            render()
-        }
-        else{
+    if(!isWaiting){
+        batman.getDiceHtml()
+        monster.getDiceHtml()
+        batman.takeDamage(monster.currentDiceScore)
+        monster.takeDamage(batman.currentDiceScore)
+        render()
+        playAudio("music/punch.mp3")
+        if(batman.dead){
             endGame()
         }
+        else if(monster.dead){
+            isWaiting=true
+            if(monstersArray.length > 0){
+                setTimeout(()=>{
+                    monster = getNewMonster()
+                    render()
+                    isWaiting=false
+                },1500)
+                
+            }
+            else{
+                endGame()
+            }
+        }
+
     }
+    
 
 }
 function endGame(){
+    isWaiting=true
     const batmanWin =batman.health>0
     const renderModel = batman.health===0 && monster.health===0 ? "./images/batman-joker.jpg":
     batmanWin ? batman.model:
@@ -54,10 +64,12 @@ function endGame(){
     monster.health>0 ? "Joker":
     "No one"
     playAudio("./music/batman-theme.mp3")
-    document.body.innerHTML=
+
+    setTimeout(()=>{
+        document.body.innerHTML=
 
     `<div class="end-game">
-<div class="col1">
+        <div class="col1">
     <h1>${renderText}</h1>
 </div>
 <div class="col2">
@@ -72,10 +84,11 @@ function endGame(){
 </div>
     <video src="./video/Game-background.mp4" autoplay muted loop type="mp4"></video>
 <audio autoplay loop>
-    <source src="music/batman_theme.mp3"  type="audio/mpeg">
+    <source src="music/batman-theme.mp3"  type="audio/mpeg">
 </audio>
 </div>`
 
+    },1500)
 }
 
 function render(){

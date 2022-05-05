@@ -392,6 +392,9 @@ video {
 #slide{
   display:none;
 }
+.end-game h1{
+  font-size:4rem;
+}
 
 }
 @media only screen and (max-width: 620px) {
@@ -415,6 +418,9 @@ video {
   }
   .transform{
     font-size:1.2rem;
+  }
+  .end-game h1{
+    font-size: 3em;
   }
   
 }
