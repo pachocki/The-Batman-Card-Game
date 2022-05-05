@@ -81,8 +81,6 @@ function endGame(){
 function render(){
     document.getElementById(batman.elementId).innerHTML=batman.getCharacterHtml()
     document.getElementById(monster.elementId).innerHTML=monster.getCharacterHtml()
-    playAudio("./music/batman-theme.mp3")
-    
 }
 
 document.getElementById("atack").addEventListener("click" , attack)
