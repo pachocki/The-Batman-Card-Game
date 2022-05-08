@@ -57,7 +57,7 @@ function attack(){
 function endGame(){
     isWaiting=true
     const batmanWin =batman.health>0
-    const renderModel = batman.health===0 && monster.health===0 ? "./images/batman-joker.jpg":
+    const renderModel = batman.health===0 && monster.health===0 ? "./images/batman-joker.png":
     batmanWin ? batman.model:
     monster.model 
     const renderText = batman.health>0 ? "Batman":

@@ -22,7 +22,7 @@ const characterData={
     model:"./images/pingwin.png",
     name:"Pingwin",
     style:"pingwin-style",
-    health:" 40",
+    health:" 50",
     diceCount:2
 },  
 joker :{
@@ -30,7 +30,7 @@ elementId:"monster",
 model:"./images/joker.png",
 name:" Joker",
 style:"joker-style",
-health:"45",
+health:"48",
 diceCount:3
 }
 }
