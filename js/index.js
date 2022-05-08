@@ -2,7 +2,7 @@
 $('.js-tilt').tilt({
     glare: true,
     maxGlare: .5,
-    scale: 1.1
+    scale: 1.05
 })
 
 
@@ -73,7 +73,7 @@ function endGame(){
     <h1>${renderText}</h1>
 </div>
 <div class="col2">
-    <img src="${renderModel}" alt="" class="winner">
+    <img src="${renderModel}"  alt="" class="winner js-tilt wow bounceInDown" data-wow-delay="0.4s">
 </div>
 <div class="col3">
     <h1>Win !</h1>
